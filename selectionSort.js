@@ -18,7 +18,7 @@ function selectionSort(array) {
   const arrayLength = array.length;
   for (let i = 0; i < arrayLength; i++) {
     smallestIdx = findIndexOfSmallest(array);
-    sortedArray.push(array[smallestIdx]);
+    sortedArray = [...sortedArray, array[smallestIdx]];
     array.splice(smallestIdx, 1);
   }
 
