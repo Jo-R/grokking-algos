@@ -16,7 +16,7 @@ function factorial(x) {
     return 1; // this is first thing returned then the previous calls down the stack...
   } else {
     const num = x * factorial(x - 1); // these calls go on the stack
-    console.log(`${num} for ${x}`);
+    console.log(`returning ${num} for ${x}`);
     return num;
   }
 }
