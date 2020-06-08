@@ -3,7 +3,7 @@
 // count the items in array, also recursive
 // find maximum number, also recursive
 
-const arr = [1, 2, 3, 4];
+const arr = [11, 2, 3, 4, 13, 8];
 
 function sum(array) {
   let total = 0;
@@ -27,7 +27,19 @@ function countItems(array) {
   }
 }
 
-function findMax(array) {} // TODO!
+function findMax(array) {
+  let max = array[0];
+  if (array.length === 1) {
+    return array[0];
+  }
+  if (array.length === 2) {
+    return array[0] > array[1] ? array[0] : array[1];
+  } else {
+    array.shift();
+    const subMax = findMax(array);
+    return max > subMax ? max : subMax;
+  }
+}
 
 console.log(sum([...arr])); // spreading the array so they are copies and original not mutated by fx
 console.log(countItems([...arr]));
