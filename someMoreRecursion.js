@@ -3,7 +3,7 @@
 // count the items in array, also recursive
 // find maximum number, also recursive
 
-const arr = [11, 2, 3, 4, 13, 8];
+const arr = [11, 2, 33, 4, 13, 8];
 
 function sum(array) {
   let total = 0;
@@ -30,13 +30,18 @@ function countItems(array) {
 function findMax(array) {
   let max = array[0];
   if (array.length === 1) {
+    console.log(`return length 1 ${array[0]}, max ${max}`);
     return array[0];
   }
   if (array.length === 2) {
+    console.log(
+      `return length 2  max ${max}, array 0 ${array[0]}, array 1 ${array[1]}`
+    );
     return array[0] > array[1] ? array[0] : array[1];
   } else {
-    array.shift();
+    const item = array.shift();
     const subMax = findMax(array);
+    console.log(`return ${item}: submax ${subMax}, max: ${max}`);
     return max > subMax ? max : subMax;
   }
 }
